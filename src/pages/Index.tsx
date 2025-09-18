@@ -128,7 +128,7 @@ const Index = () => {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleSearchSubmit()}
-                className="w-full border-0 text-gray-600 placeholder-gray-400 focus-visible:ring-0 focus:border focus:border-primary text-sm sm:text-base placeholder:text-xs sm:placeholder:text-sm pr-12"
+                className="w-full border-0 border-r-0 rounded-l-none text-gray-600 placeholder-gray-400 focus-visible:ring-0 focus:border focus:border-primary text-sm sm:text-base placeholder:text-xs sm:placeholder:text-sm pr-12"
               />
               <button 
                 onClick={handleSearchSubmit}
