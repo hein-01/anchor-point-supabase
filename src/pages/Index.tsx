@@ -217,21 +217,48 @@ const Index = () => {
                     </Swiper>
                   </div>
                   
-                  {/* Desktop bullet points */}
-                  <div className="hidden md:block space-y-4">
-                    <div className="flex items-center justify-center lg:justify-start gap-3">
-                      <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#E8E3FD'}}>
-                        <span className="text-sm font-bold" style={{color: '#A89BFA'}}>✓</span>
-                      </div>
-                      <span className="text-slate-500 dark:text-slate-400 font-medium">Discover local businesses easily</span>
-                    </div>
-                    <div className="flex items-center justify-center lg:justify-start gap-3">
-                      <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#E8E3FD'}}>
-                        <span className="text-sm font-bold" style={{color: '#A89BFA'}}>✓</span>
-                      </div>
-                      <span className="text-slate-500 dark:text-slate-400 font-medium">Get a POS and website for as little as $12/month</span>
-                    </div>
-                  </div>
+                   {/* Desktop Image Slider - replaces bullet points */}
+                   <div className="hidden md:block px-2">
+                     <Swiper
+                       spaceBetween={16}
+                       slidesPerView={1.8}
+                       centeredSlides={true}
+                       autoplay={{
+                         delay: 4500,
+                         disableOnInteraction: false,
+                       }}
+                       modules={[Autoplay]}
+                       className="desktop-business-slider"
+                     >
+                       <SwiperSlide>
+                         <div className="h-[300px] rounded-xl overflow-hidden shadow-md w-full transition-all duration-300 hover:scale-105">
+                           <img 
+                             src={mobileSlider1} 
+                             alt="Local business directory app interface"
+                             className="w-full h-full object-contain"
+                           />
+                         </div>
+                       </SwiperSlide>
+                       <SwiperSlide>
+                         <div className="h-[300px] rounded-xl overflow-hidden shadow-md w-full transition-all duration-300 hover:scale-105">
+                           <img 
+                             src={mobileSlider2} 
+                             alt="Small business owner managing online store"
+                             className="w-full h-full object-contain"
+                           />
+                         </div>
+                       </SwiperSlide>
+                       <SwiperSlide>
+                         <div className="h-[300px] rounded-xl overflow-hidden shadow-md w-full transition-all duration-300 hover:scale-105">
+                           <img 
+                             src={mobileSlider3} 
+                             alt="Modern POS system interface"
+                             className="w-full h-full object-contain"
+                           />
+                         </div>
+                       </SwiperSlide>
+                     </Swiper>
+                   </div>
                 </div>
               </div>
               
