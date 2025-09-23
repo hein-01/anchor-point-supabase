@@ -181,7 +181,7 @@ const Index = () => {
                       slidesPerView={1.3}
                       centeredSlides={true}
                       autoplay={{
-                        delay: 2500,
+                        delay: 4500,
                         disableOnInteraction: false,
                       }}
                       modules={[Autoplay]}
