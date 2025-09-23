@@ -157,9 +157,9 @@ const Index = () => {
             
             <div className="relative z-10 p-6 md:p-8 flex flex-col lg:flex-row items-center justify-between gap-6">
               
-              {/* Mobile Layout - Keep original layout for mobile */}
-              <div className="flex lg:hidden items-center justify-between gap-6 w-full">
-                {/* Illustration */}
+              {/* Mobile Layout - Reorganized: circle, text, slider, buttons */}
+              <div className="flex lg:hidden flex-col items-center gap-6 w-full">
+                {/* Spinning Circle at Top */}
                 <div className="flex-shrink-0 animate-scale-in">
                   <div className="relative">
                     <div className="w-20 h-20 md:w-28 md:h-28 bg-gradient-to-br from-violet-500 via-purple-500 to-fuchsia-500 rounded-full flex items-center justify-center shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-500 hover:scale-105 animate-slow-spin">
@@ -171,59 +171,56 @@ const Index = () => {
                   </div>
                 </div>
                 
-                {/* Content */}
-                <div className="flex-1 text-center lg:text-left max-w-2xl">
-                  <h2 className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold bg-gradient-to-r from-slate-600 via-purple-600 to-slate-600 dark:from-gray-300 dark:via-purple-300 dark:to-gray-300 bg-clip-text text-transparent mb-4 leading-relaxed">
-                    Find a business or<br className="sm:hidden" /> Start your online business!
-                  </h2>
-                  <div className="space-y-4 text-sm md:text-base">
-                    {/* Mobile Image Slider - replaces bullet points on mobile */}
-                    <div className="block md:hidden px-2">
-                      <Swiper
-                        spaceBetween={16}
-                        slidesPerView={1.3}
-                        centeredSlides={true}
-                        autoplay={{
-                          delay: 4500,
-                          disableOnInteraction: false,
-                        }}
-                        modules={[Autoplay]}
-                        className="mobile-business-slider"
-                      >
-                        <SwiperSlide>
-                          <div className="h-[400px] rounded-xl overflow-hidden shadow-md w-full transition-all duration-300 hover:scale-105">
-                            <img 
-                              src={mobileSlider1} 
-                              alt="Local business directory app interface"
-                              className="w-full h-full object-contain"
-                            />
-                          </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                          <div className="h-[400px] rounded-xl overflow-hidden shadow-md w-full transition-all duration-300 hover:scale-105">
-                            <img 
-                              src={mobileSlider2} 
-                              alt="Small business owner managing online store"
-                              className="w-full h-full object-contain"
-                            />
-                          </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                          <div className="h-[400px] rounded-xl overflow-hidden shadow-md w-full transition-all duration-300 hover:scale-105">
-                            <img 
-                              src={mobileSlider3} 
-                              alt="Modern POS system interface"
-                              className="w-full h-full object-contain"
-                            />
-                          </div>
-                        </SwiperSlide>
-                      </Swiper>
-                    </div>
-                  </div>
+                {/* Centered Text */}
+                <h2 className="text-lg md:text-xl font-bold bg-gradient-to-r from-slate-600 via-purple-600 to-slate-600 dark:from-gray-300 dark:via-purple-300 dark:to-gray-300 bg-clip-text text-transparent mb-4 leading-relaxed text-center">
+                  Find a business or<br className="sm:hidden" /> Start your online business!
+                </h2>
+                
+                {/* Mobile Image Slider */}
+                <div className="px-2 w-full">
+                  <Swiper
+                    spaceBetween={16}
+                    slidesPerView={1.3}
+                    centeredSlides={true}
+                    autoplay={{
+                      delay: 4500,
+                      disableOnInteraction: false,
+                    }}
+                    modules={[Autoplay]}
+                    className="mobile-business-slider"
+                  >
+                    <SwiperSlide>
+                      <div className="h-[400px] rounded-xl overflow-hidden shadow-md w-full transition-all duration-300 hover:scale-105">
+                        <img 
+                          src={mobileSlider1} 
+                          alt="Local business directory app interface"
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div className="h-[400px] rounded-xl overflow-hidden shadow-md w-full transition-all duration-300 hover:scale-105">
+                        <img 
+                          src={mobileSlider2} 
+                          alt="Small business owner managing online store"
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div className="h-[400px] rounded-xl overflow-hidden shadow-md w-full transition-all duration-300 hover:scale-105">
+                        <img 
+                          src={mobileSlider3} 
+                          alt="Modern POS system interface"
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                    </SwiperSlide>
+                  </Swiper>
                 </div>
                 
-                {/* CTA Buttons */}
-                <div className="flex flex-col md:flex-row gap-4 min-w-fit">
+                {/* CTA Buttons at Bottom */}
+                <div className="flex flex-col md:flex-row gap-4 mt-4">
                   <Button className="bg-gradient-to-r from-slate-900 to-slate-700 hover:from-slate-800 hover:to-slate-600 text-white px-6 py-3 rounded-xl font-medium text-sm shadow-xl hover:shadow-2xl transition-all duration-300">
                     Find Shops
                   </Button>
