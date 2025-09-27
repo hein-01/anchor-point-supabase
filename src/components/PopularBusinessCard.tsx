@@ -643,13 +643,10 @@ export const PopularBusinessCard = ({ business }: PopularBusinessCardProps) => {
          
            <div className="flex items-center gap-2">
              {business.information_website && (
-               <Button
-                 size="sm"
-                 className="h-7 px-2 bg-blue-600 hover:bg-blue-700 text-white border-0 flex items-center gap-1"
+               <Globe 
+                 className="w-5 h-5 text-black cursor-pointer hover:opacity-80 transition-opacity"
                  onClick={() => window.open(business.information_website, '_blank')}
-               >
-                 <Globe className="w-4 h-4" />
-               </Button>
+               />
              )}
             {business.tiktok_url && (
               <img 
