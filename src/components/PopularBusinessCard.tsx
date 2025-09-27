@@ -649,7 +649,6 @@ export const PopularBusinessCard = ({ business }: PopularBusinessCardProps) => {
                  onClick={() => window.open(business.information_website, '_blank')}
                >
                  <Globe className="w-4 h-4" />
-                 <span className="text-xs">Website</span>
                </Button>
              )}
             {business.tiktok_url && (
