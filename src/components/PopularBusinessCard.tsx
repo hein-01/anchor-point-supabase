@@ -29,7 +29,7 @@ interface Business {
   rating?: number;
   image_url?: string;
   website?: string;
-  info_website?: string;
+  information_website?: string;
   product_images?: string[] | null;
   business_options?: string[] | null;
   starting_price?: string | null;
@@ -641,17 +641,17 @@ export const PopularBusinessCard = ({ business }: PopularBusinessCardProps) => {
            </DialogTrigger>
          </Dialog>
          
-          <div className="flex items-center gap-2">
-            {business.info_website && (
-              <Button
-                size="sm"
-                className="h-7 px-2 bg-blue-600 hover:bg-blue-700 text-white border-0 flex items-center gap-1"
-                onClick={() => window.open(business.info_website, '_blank')}
-              >
-                <Globe className="w-4 h-4" />
-                <span className="text-xs">Website</span>
-              </Button>
-            )}
+           <div className="flex items-center gap-2">
+             {business.information_website && (
+               <Button
+                 size="sm"
+                 className="h-7 px-2 bg-blue-600 hover:bg-blue-700 text-white border-0 flex items-center gap-1"
+                 onClick={() => window.open(business.information_website, '_blank')}
+               >
+                 <Globe className="w-4 h-4" />
+                 <span className="text-xs">Website</span>
+               </Button>
+             )}
             {business.tiktok_url && (
               <img 
                 src={tiktokIcon}
