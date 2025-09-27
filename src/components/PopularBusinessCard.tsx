@@ -644,7 +644,7 @@ export const PopularBusinessCard = ({ business }: PopularBusinessCardProps) => {
            <div className="flex items-center gap-2">
              {business.information_website && (
                <Globe 
-                 className="w-7 h-7 text-black cursor-pointer hover:opacity-80 transition-opacity"
+                 className="w-7 h-7 text-gray-700 cursor-pointer hover:opacity-80 transition-opacity"
                  onClick={() => window.open(business.information_website, '_blank')}
                />
              )}
@@ -656,14 +656,14 @@ export const PopularBusinessCard = ({ business }: PopularBusinessCardProps) => {
                 onClick={() => window.open(business.tiktok_url, '_blank')}
               />
             )}
-            {business.facebook_page && (
-              <img 
-                src={facebookIcon}
-                alt="Facebook"
-                className="w-6 h-6 rounded-lg cursor-pointer hover:opacity-80 transition-opacity"
-                onClick={() => window.open(business.facebook_page, '_blank')}
-              />
-            )}
+             {business.facebook_page && (
+               <img 
+                 src={facebookIcon}
+                 alt="Facebook"
+                 className="w-7 h-7 rounded-lg cursor-pointer hover:opacity-80 transition-opacity"
+                 onClick={() => window.open(business.facebook_page, '_blank')}
+               />
+             )}
             {business.phone && (
               <Button
                 size="sm"
