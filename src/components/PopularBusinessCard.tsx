@@ -642,7 +642,7 @@ export const PopularBusinessCard = ({ business }: PopularBusinessCardProps) => {
            </DialogTrigger>
          </Dialog>
          
-           <div className="flex items-center gap-2">
+           <div className="flex items-center gap-1">
              {business.information_website && (
                <TooltipProvider>
                  <Tooltip>
@@ -658,14 +658,14 @@ export const PopularBusinessCard = ({ business }: PopularBusinessCardProps) => {
                  </Tooltip>
                </TooltipProvider>
              )}
-            {business.tiktok_url && (
-              <img 
-                src={tiktokIcon}
-                alt="TikTok"
-                className="w-6 h-6 rounded-lg cursor-pointer hover:opacity-80 transition-opacity"
-                onClick={() => window.open(business.tiktok_url, '_blank')}
-              />
-            )}
+             {business.tiktok_url && (
+               <img 
+                 src={tiktokIcon}
+                 alt="TikTok"
+                 className="w-7 h-7 rounded-lg cursor-pointer hover:opacity-80 transition-opacity"
+                 onClick={() => window.open(business.tiktok_url, '_blank')}
+               />
+             )}
              {business.facebook_page && (
                <img 
                  src={facebookIcon}
