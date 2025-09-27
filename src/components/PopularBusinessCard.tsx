@@ -5,6 +5,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Bookmark, Check, BadgeCheck, MapPin, ChevronRight, ChevronLeft, Star, Globe } from 'lucide-react';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import facebookIcon from "@/assets/facebook-icon.jpg";
 import tiktokIcon from "@/assets/tiktok-icon.jpg";
 import phoneIcon from "@/assets/phone-icon-new.png";
@@ -643,10 +644,19 @@ export const PopularBusinessCard = ({ business }: PopularBusinessCardProps) => {
          
            <div className="flex items-center gap-2">
              {business.information_website && (
-               <Globe 
-                 className="w-7 h-7 text-gray-500 cursor-pointer hover:opacity-80 transition-opacity"
-                 onClick={() => window.open(business.information_website, '_blank')}
-               />
+               <TooltipProvider>
+                 <Tooltip>
+                   <TooltipTrigger asChild>
+                     <Globe 
+                       className="w-7 h-7 text-gray-500 cursor-pointer hover:opacity-80 transition-opacity"
+                       onClick={() => window.open(business.information_website, '_blank')}
+                     />
+                   </TooltipTrigger>
+                   <TooltipContent>
+                     <p>Visit Our Information Website</p>
+                   </TooltipContent>
+                 </Tooltip>
+               </TooltipProvider>
              )}
             {business.tiktok_url && (
               <img 
