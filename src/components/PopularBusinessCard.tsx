@@ -644,7 +644,7 @@ export const PopularBusinessCard = ({ business }: PopularBusinessCardProps) => {
            <div className="flex items-center gap-2">
              {business.information_website && (
                <Globe 
-                 className="w-7 h-7 text-gray-700 cursor-pointer hover:opacity-80 transition-opacity"
+                 className="w-7 h-7 text-gray-500 cursor-pointer hover:opacity-80 transition-opacity"
                  onClick={() => window.open(business.information_website, '_blank')}
                />
              )}
