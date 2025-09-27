@@ -583,12 +583,14 @@ export const PopularBusinessCard = ({ business }: PopularBusinessCardProps) => {
             </div>
           </div>
           
-          {(business.towns || business.province_district) && (
-            <p className="text-xs text-muted-foreground flex items-center gap-1">
-              <MapPin className="w-3 h-3 text-gray-500" />
-              {[business.towns, business.province_district].filter(Boolean).join(', ')}
-            </p>
-          )}
+           {(business.towns || business.province_district) && (
+             <p className="text-xs text-muted-foreground flex items-center gap-1 whitespace-nowrap overflow-hidden text-ellipsis">
+               <MapPin className="w-3 h-3 text-gray-500 flex-shrink-0" />
+               <span className="truncate">
+                 {[business.towns, business.province_district].filter(Boolean).join(', ')}
+               </span>
+             </p>
+           )}
           
           {/* Business Options */}
           {business.business_options && business.business_options.length > 0 && (
