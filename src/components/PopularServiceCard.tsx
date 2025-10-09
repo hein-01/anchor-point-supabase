@@ -600,11 +600,11 @@ export const PopularServiceCard = ({ service }: PopularServiceCardProps) => {
           
           {/* Service Options */}
           {service.business_options && service.business_options.length > 0 && (
-            <div className="flex flex-wrap gap-y-1">
+            <div className="flex flex-wrap gap-x-1 gap-y-1">
               {service.business_options.map((option, index) => (
                 <React.Fragment key={index}>
                   <span 
-                    className={`text-xs py-0.5 rounded ${
+                    className={`text-xs px-2 py-0.5 rounded ${
                       option === "We Sell Online" 
                         ? "text-[#B8860B]" 
                         : getOptionColors(index)
