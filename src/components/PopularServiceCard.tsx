@@ -427,7 +427,7 @@ export const PopularServiceCard = ({ service }: PopularServiceCardProps) => {
               variant="outline" 
               className="h-5 text-[10px] px-1 bg-white hover:bg-[#8461F5] hover:text-white border-[#8461F5] text-[#8461F5] -ml-2 rounded-sm"
             >
-              See Facilities
+              SEE FACILITIES
             </Button>
           </DialogTrigger>
         </Dialog>
