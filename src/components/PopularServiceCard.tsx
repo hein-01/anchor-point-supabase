@@ -32,6 +32,7 @@ interface Service {
   website?: string;
   information_website?: string;
   product_images?: string[] | null;
+  service_images?: string[] | null;
   business_options?: string[] | null;
   starting_price?: string | null;
   license_expired_date?: string | null;
@@ -296,7 +297,7 @@ export const PopularServiceCard = ({ service }: PopularServiceCardProps) => {
     return services;
   };
 
-  const hasMultipleImages = service.product_images && service.product_images.length > 1;
+  const hasMultipleImages = service.service_images && service.service_images.length > 1;
 
   const getFirstPopularProduct = () => {
     if (!service.popular_products) return '';
@@ -331,8 +332,8 @@ export const PopularServiceCard = ({ service }: PopularServiceCardProps) => {
             className="service-carousel"
             style={{ width: '290px', height: '290px' }}
           >
-          {service.product_images && service.product_images.length > 0 ? (
-            service.product_images.map((image, index) => (
+          {service.service_images && service.service_images.length > 0 ? (
+            service.service_images.map((image, index) => (
               <SwiperSlide key={index}>
                 <img
                   src={image}
@@ -375,7 +376,7 @@ export const PopularServiceCard = ({ service }: PopularServiceCardProps) => {
           )}
           
           {/* Custom Navigation Arrows - only show if multiple images */}
-          {service.product_images && service.product_images.length > 1 && (
+          {service.service_images && service.service_images.length > 1 && (
             <>
               <button 
                 className={`swiper-button-prev-${service.id} absolute left-2 top-1/2 -translate-y-1/2 z-30 w-6 h-6 bg-white/95 rounded-full flex items-center justify-center cursor-pointer hover:bg-white transition-all duration-200 shadow-lg border border-gray-200`}
