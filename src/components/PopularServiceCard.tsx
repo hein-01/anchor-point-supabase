@@ -39,6 +39,8 @@ interface Service {
   facebook_page?: string | null;
   tiktok_url?: string | null;
   phone?: string | null;
+  popular_products?: string | null;
+  business_name?: string | null;
 }
 
 interface PopularServiceCardProps {
@@ -295,6 +297,18 @@ export const PopularServiceCard = ({ service }: PopularServiceCardProps) => {
   };
 
   const hasMultipleImages = service.product_images && service.product_images.length > 1;
+
+  const getFirstPopularProduct = () => {
+    if (!service.popular_products) return '';
+    const products = service.popular_products.split(',').map(p => p.trim()).filter(p => p);
+    return products.length > 0 ? products[0] : '';
+  };
+
+  const getFormattedTitle = () => {
+    const firstProduct = getFirstPopularProduct();
+    const businessName = service.business_name || service.name;
+    return firstProduct ? `[${firstProduct}] ${businessName}` : businessName;
+  };
 
   return (
     <>
@@ -569,7 +583,7 @@ export const PopularServiceCard = ({ service }: PopularServiceCardProps) => {
         <div className="space-y-3">
           <div>
             <h3 className="font-semibold text-sm text-foreground leading-tight line-clamp-2">
-              {service.name}
+              {getFormattedTitle()}
             </h3>
           </div>
           
