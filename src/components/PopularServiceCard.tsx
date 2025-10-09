@@ -34,6 +34,7 @@ interface Service {
   product_images?: string[] | null;
   service_images?: string[] | null;
   business_options?: string[] | null;
+  base_price?: number | null;
   starting_price?: string | null;
   license_expired_date?: string | null;
   products_catalog?: string | null;
@@ -395,10 +396,10 @@ export const PopularServiceCard = ({ service }: PopularServiceCardProps) => {
         </Swiper>
         
         {/* Starting Price Tag - Top Left Corner */}
-        {service.starting_price && (
+        {service.base_price && (
           <div className="absolute top-0 left-0 z-40">
             <span className="bg-gray-600 text-white text-xs font-medium px-2 py-1 shadow-lg uppercase rounded-tl-lg rounded-br-lg">
-              STARTS FROM {service.starting_price}
+              STARTS FROM {service.base_price}
             </span>
           </div>
         )}
