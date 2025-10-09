@@ -602,7 +602,7 @@ export const PopularServiceCard = ({ service }: PopularServiceCardProps) => {
           {service.business_options && service.business_options.length > 0 && (
             <div className="flex flex-wrap gap-x-1 gap-y-1">
               {service.business_options.map((option, index) => (
-                <div key={index}>
+                <React.Fragment key={index}>
                   <span 
                     className={`text-xs px-2 py-0.5 rounded ${
                       option === "We Sell Online" 
@@ -614,7 +614,10 @@ export const PopularServiceCard = ({ service }: PopularServiceCardProps) => {
                      option === "We Sell Online" ? "WE SELL ONLINE" : 
                      option}
                   </span>
-                </div>
+                  {index < service.business_options.length - 1 && (
+                    <span className="text-xs text-black">|</span>
+                  )}
+                </React.Fragment>
               ))}
             </div>
           )}
