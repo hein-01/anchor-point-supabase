@@ -628,7 +628,7 @@ export const PopularServiceCard = ({ service }: PopularServiceCardProps) => {
             className="w-full h-8 text-xs flex items-center justify-center gap-1"
             onClick={() => service.website && window.open(service.website, '_blank')}
           >
-            Go to Online Store
+            Check Availability
             <ChevronRight className="w-3 h-3 transition-transform duration-300 group-hover:translate-x-1" />
           </Button>
          </div>
