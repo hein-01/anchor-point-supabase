@@ -604,9 +604,9 @@ export const PopularServiceCard = ({ service }: PopularServiceCardProps) => {
               {service.business_options.map((option, index) => (
                 <div key={index}>
                   <span 
-                    className={`text-xs px-2 py-0.5 rounded border ${
+                    className={`text-xs px-2 py-0.5 rounded ${
                       option === "We Sell Online" 
-                        ? "border-[#B8860B] text-[#B8860B]" 
+                        ? "text-[#B8860B]" 
                         : getOptionColors(index)
                     }`}
                   >
