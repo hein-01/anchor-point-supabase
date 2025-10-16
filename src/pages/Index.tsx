@@ -40,7 +40,7 @@ const Index = () => {
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const swiperRef = useRef<SwiperType | null>(null);
   const navigate = useNavigate();
-  const placeholderText = useTypingEffect("👈 Tap to select/deselect, then enter your search keyword", 50);
+  const placeholderText = useTypingEffect("👈 Tap to select/deselect, then enter your search keyword", 250);
   const heroBackgrounds = [heroBg1, heroBg2, heroBg3];
   const heroBackgroundsMobile = [heroBgMobile1, heroBgMobile2, heroBgMobile3];
   const categories = [{
