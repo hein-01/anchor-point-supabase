@@ -19,6 +19,7 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/navigation';
 import { useTypingEffect } from "@/hooks/useTypingEffect";
+import { useIsMobile } from "@/hooks/use-mobile";
 // Import hero background images with error handling
 const heroBg1 = "https://github.com/hein-01/mysvgs/raw/552eaf7b2405ff01d6ea749d1f165971814ead9b/banner_image_desktop_01_1920_350.png";
 const heroBg2 = "https://github.com/hein-01/mysvgs/raw/552eaf7b2405ff01d6ea749d1f165971814ead9b/banner_image_desktop_02_1920_350.png";
@@ -40,7 +41,11 @@ const Index = () => {
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const swiperRef = useRef<SwiperType | null>(null);
   const navigate = useNavigate();
-  const placeholderText = useTypingEffect("👈 Tap to select/deselect, then enter your search keyword", 250);
+  const isMobile = useIsMobile();
+  const placeholderText = useTypingEffect(
+    isMobile ? "👈 Tap, then type keyword" : "👈 Tap to select/deselect, then enter your search keyword", 
+    250
+  );
   const heroBackgrounds = [heroBg1, heroBg2, heroBg3];
   const heroBackgroundsMobile = [heroBgMobile1, heroBgMobile2, heroBgMobile3];
   const categories = [{
