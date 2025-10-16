@@ -18,6 +18,7 @@ import type { Swiper as SwiperType } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/navigation';
+import { useTypingEffect } from "@/hooks/useTypingEffect";
 // Import hero background images with error handling
 const heroBg1 = "https://github.com/hein-01/mysvgs/raw/552eaf7b2405ff01d6ea749d1f165971814ead9b/banner_image_desktop_01_1920_350.png";
 const heroBg2 = "https://github.com/hein-01/mysvgs/raw/552eaf7b2405ff01d6ea749d1f165971814ead9b/banner_image_desktop_02_1920_350.png";
@@ -39,6 +40,7 @@ const Index = () => {
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const swiperRef = useRef<SwiperType | null>(null);
   const navigate = useNavigate();
+  const placeholderText = useTypingEffect("Tap a category to select or deselect it, then enter your search keyword.", 50);
   const heroBackgrounds = [heroBg1, heroBg2, heroBg3];
   const heroBackgroundsMobile = [heroBgMobile1, heroBgMobile2, heroBgMobile3];
   const categories = [{
@@ -148,36 +150,6 @@ const Index = () => {
             </div>
             
             <div className="flex-1 relative">
-              {!isSearchFocused && !searchTerm && (
-                <div className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none overflow-hidden w-[calc(100%-4rem)] z-10">
-                  <div className="flex animate-scroll-rtl">
-                    <span className="whitespace-nowrap text-gray-400 text-xs sm:text-sm pr-8">
-                      Tap a category to select or deselect it, then enter your search keyword.
-                    </span>
-                    <span className="whitespace-nowrap text-gray-400 text-xs sm:text-sm pr-8">
-                      Tap a category to select or deselect it, then enter your search keyword.
-                    </span>
-                    <span className="whitespace-nowrap text-gray-400 text-xs sm:text-sm pr-8">
-                      Tap a category to select or deselect it, then enter your search keyword.
-                    </span>
-                    <span className="whitespace-nowrap text-gray-400 text-xs sm:text-sm pr-8">
-                      Tap a category to select or deselect it, then enter your search keyword.
-                    </span>
-                    <span className="whitespace-nowrap text-gray-400 text-xs sm:text-sm pr-8">
-                      Tap a category to select or deselect it, then enter your search keyword.
-                    </span>
-                    <span className="whitespace-nowrap text-gray-400 text-xs sm:text-sm pr-8">
-                      Tap a category to select or deselect it, then enter your search keyword.
-                    </span>
-                    <span className="whitespace-nowrap text-gray-400 text-xs sm:text-sm pr-8">
-                      Tap a category to select or deselect it, then enter your search keyword.
-                    </span>
-                    <span className="whitespace-nowrap text-gray-400 text-xs sm:text-sm pr-8">
-                      Tap a category to select or deselect it, then enter your search keyword.
-                    </span>
-                  </div>
-                </div>
-              )}
               <Input 
                 type="text" 
                 value={searchTerm} 
@@ -185,6 +157,7 @@ const Index = () => {
                 onFocus={() => setIsSearchFocused(true)}
                 onBlur={() => setIsSearchFocused(false)}
                 onKeyDown={e => e.key === 'Enter' && handleSearchSubmit()} 
+                placeholder={placeholderText}
                 className="w-full border border-[#F5F4F8] border-l-0 hover:border-l-0 focus:border-l-0 rounded-l-none text-gray-600 focus-visible:ring-0 text-sm sm:text-base pr-12" 
               />
               <button onClick={handleSearchSubmit} className="absolute right-0 top-1/2 transform -translate-y-1/2 p-2 rounded-md flex items-center justify-center hover:bg-primary hover:bg-opacity-10 active:bg-primary active:bg-opacity-10 transition-colors duration-200">
